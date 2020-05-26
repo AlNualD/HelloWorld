@@ -19,6 +19,7 @@ pipeline {
       echo "++++++ docker run +++++++"
       sh 'docker run nu4ld/hw_in_docker:last'
       }
+      }
     stage ("docker login") {
       steps {
       withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable 'PASSWD')]) {
@@ -26,6 +27,6 @@ pipeline {
       }
     }
     
-   // }
+    }
   }
 }  
