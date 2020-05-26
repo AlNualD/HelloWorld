@@ -11,13 +11,13 @@ pipeline {
     stage ("docker build") {
       steps {
       echo "++++++++ statr build +++++"
-      sh 'docker build . -t hw_in_docker'
+      sh 'docker build . -t nu4ld/hw_in_docker:last'
       }
     }
     stage ("docker run") {
       steps {
       echo "++++++ docker run +++++++"
-      sh 'docker run hw_in_docker'
+      sh 'docker run nuald/hw_in_docker:last'
       }
     }
   }
