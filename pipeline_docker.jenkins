@@ -1,6 +1,12 @@
 pipeline {
   agent any
   stages {
+    stage ("get code from git") {
+    steps {
+            // Get some code from a GitHub repository
+            git 'https://github.com/AlNualD/HelloWorld.git'
+         }
+    }
     stage ("docker build") {
       steps {
       echo "++++++++ statr build +++++"
