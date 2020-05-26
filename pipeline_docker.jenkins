@@ -27,7 +27,7 @@ pipeline {
                 }
             } 
     }
-    stage {
+    stage ("docker push") {
       steps {
       sh 'docker push nu4ld/hw_in_docker:last'
       }
