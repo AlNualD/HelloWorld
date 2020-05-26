@@ -24,9 +24,13 @@ pipeline {
       steps {
       withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWD')]) {
       sh 'docker login -u $USERNAME -p $PASSWD'
-      }
+                }
+            } 
     }
-    
+    stage {
+      steps {
+      sh 'docker push nu4ld/hw_in_docker:last'
+      }
     }
   }
 }  
