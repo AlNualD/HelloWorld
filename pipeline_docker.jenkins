@@ -1,0 +1,17 @@
+pipeline {
+  agent any
+  stages {
+    stage ("docker build") {
+      steps {
+      echo "++++++++ statr build +++++"
+      sh 'docker build . -t hw_in_docker'
+      }
+    }
+    stage ("docker run") {
+      steps {
+      echo "++++++ docker run +++++++"
+      sh 'docker run hw_in_docker'
+      }
+    }
+  }
+}  
